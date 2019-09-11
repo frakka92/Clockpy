@@ -1,8 +1,38 @@
-body{
-    background-color: black;
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+html, body{
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15vw;
 }
 
+.fullbox{
+    height: 100%;
+    width: 100%;
+}
+
+#clock{
+    height: 100%;
+    z-index: 0;
+}
+
+.weather{
+    height: 50%;
+    text-align: center;
+    z-index: 1; 
+}
+
+.temperature{
+    height: 50%;
+    text-align: center;
+    z-index: 2;
+}
 
 p{
-    color: white;
+    color: black;
+    height: auto;
+    width: 100%;
+    text-align: center;
 }
