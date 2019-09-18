@@ -33,8 +33,6 @@ function getLocation() {
             //http request
             var xhr = new XMLHttpRequest();
             var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
-            url = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
-            
             console.log(url);
 
             xhr.open("GET", url, true);
@@ -44,10 +42,10 @@ function getLocation() {
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                   //console.log(xhr.responseText);
                   var response = JSON.parse(xhr.responseText);
-                  console.log("Temp " + response.main.temp);
+                  //console.log("Temp " + response["main"]["temp"]);
 
-                  //$("#temperature").html(response.main.temp);
-                }
+                  $("#temperature").html(response["main"]["temp"]);
+                 }
               };
 
         });
