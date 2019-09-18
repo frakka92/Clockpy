@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title -->
     <title>AlarmPy</title>
@@ -24,37 +24,44 @@
 
 </head>
 
-<body>
-    <div class="fullbox">
+<body style="display:flex; justify-content:center; align-items:center">
 
-        <div class="row align-items-center">
+    <div class="row fullbox">
 
-            <div class="col-7 centered">
-                <div class="row align-items-center" id="clock">
+        <div class="col-7 centered">
+            <div class="row align-items-center" id="clock">
 
-                </div>
+            </div>
+        </div>
+
+        <div class="col-5 centered" id="weather_temp_box">
+            <div class="row align-items-center" id="weather">
+                <i class="wi wi-day-sunny"></i>
             </div>
 
-            <div class="col-5">
-                <div class="row align-items-center" id="weather">
-                    <i class="wi wi-day-sunny"></i>
+            <div class="row align-items-center" id="thermometer_box">
+
+                <div class="col-3 centered">
+                    <i class="wi wi-thermometer"></i>
                 </div>
 
-                <div class="row align-items-center" id="temperature">
-                    <i class="wi wi-thermometer"></i>
-                    <em>
-                        23 <i class="wi wi-celsius"></i>
-                    </em>
+                <div class="col-6 centered">
+                    <div id="temperature">
+                        23
+                    </div>
+                </div>
+
+                <div class="col-3 centered">
+                    <i class="wi wi-celsius"></i>
                 </div>
             </div>
 
         </div>
-    </div>
 
-    <!-- **** All JS Files ***** -->
-    <script src="./distr/js/bootstrap.min.js"> </script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
-    <script type="text/javascript" src="./distr/js/main.js"></script>
+        <!-- **** All JS Files ***** -->
+        <script src="./distr/js/bootstrap.min.js"> </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+        <script type="text/javascript" src="./distr/js/main.js"></script>
 </body>
 
 </html>
