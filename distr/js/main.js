@@ -1,8 +1,10 @@
 $(document).ready(function () {
     var SECONDS = 1000;
     var MINUTES = 60 * SECONDS;
-    
+
     setInterval(updateClock, SECONDS);
+
+    setInterval(getLocation, SECONDS);
 
 });
 
@@ -19,4 +21,18 @@ function updateClock() {
     $("#clock").html(time);
     //console.log(time);
 
+   
+}
+
+
+function getLocation() {
+
+    if ("geolocation" in navigator){ //check geolocation available 
+        //try to get user current location using getCurrentPosition() method
+        navigator.geolocation.getCurrentPosition(function(position){ 
+                //console.log("Found your location \nLat : "+position.coords.latitude+" \nLang :"+ position.coords.longitude);
+            });
+    }else{
+        console.log("Browser doesn't support geolocation!");
+    }
 }
