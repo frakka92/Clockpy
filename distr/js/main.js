@@ -3,7 +3,7 @@ $(document).ready(function () {
     var MINUTES = 60 * SECONDS;
 
     setInterval(updateClock, SECONDS);
-    setInterval(getLocation, MINUTES);
+    setInterval(getLocation, MINUTES/4);
 
 });
 
@@ -28,11 +28,13 @@ function getLocation() {
         //try to get user current location using getCurrentPosition() method
 
         navigator.geolocation.getCurrentPosition(function (position) {
-            //console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
+            console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
 
             //http request
             var xhr = new XMLHttpRequest();
             var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
+            url = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
+            
             console.log(url);
 
             xhr.open("GET", url, true);
