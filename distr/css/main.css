@@ -65,3 +65,7 @@ html, body {
 .border_night{
     border-color: #D7D7D7;
 }
+
+.wi .fa-sm{
+    font-size: .875em;
+}
