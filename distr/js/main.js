@@ -16,13 +16,15 @@ $(document).ready(function () {
         '11d': 'wi-day-thunderstorm',
         '11n': 'wi-night-thunderstorm',
         '13d': 'wi-day-snow',
-        '13n': 'wi-night-snow'
+        '13n': 'wi-night-snow',
+        '50n': 'wi-owm-741'
     };
     getLocation(weather);
+    
     setInterval(updateClock, SECONDS);
     setInterval(function () {
         getLocation(weather);
-    }, SECONDS * 60 * 5);
+    }, SECONDS * 5);
 
 });
 
@@ -47,7 +49,7 @@ function getLocation(weather) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
             var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
-            //console.log(new Date());
+            console.log(url);
             $.ajax({
                 url: url,
                 type: 'GET',
