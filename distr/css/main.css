@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('./font.css');
 html, body {
     background-color: #D7D7D7;
     font-family: 'Raleway', sans-serif;
