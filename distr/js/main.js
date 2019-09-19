@@ -1,12 +1,9 @@
 $(document).ready(function () {
     var SECONDS = 1000;
-    var MINUTES = 60 * SECONDS;
 
     setInterval(updateClock, SECONDS);
-    setInterval(getLocation, MINUTES/4);
-
+    setInterval(getLocation, SECONDS * 25);
 });
-
 
 function updateClock() {
 
@@ -18,9 +15,7 @@ function updateClock() {
         var time = today.getHours() + ':' + today.getMinutes();
 
     $("#clock").html(time);
-
 }
-
 
 function getLocation() {
 
@@ -28,25 +23,19 @@ function getLocation() {
         //try to get user current location using getCurrentPosition() method
 
         navigator.geolocation.getCurrentPosition(function (position) {
-            console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
 
-            //http request
-            var xhr = new XMLHttpRequest();
             var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
-            console.log(url);
+            //console.log(url);
 
-            xhr.open("GET", url, true);
-            xhr.send();
-
-            xhr.onreadystatechange = function () {
-                if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                  //console.log(xhr.responseText);
-                  var response = JSON.parse(xhr.responseText);
-                  //console.log("Temp " + response["main"]["temp"]);
-
-                  $("#temperature").html(response["main"]["temp"]);
-                 }
-              };
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function (res) {
+                    console.log(res["main"]["temp"].toFixed(1));
+                    $("#temperature").html(res["main"]["temp"].toFixed(1));
+                }
+            });
 
         });
     } else {
