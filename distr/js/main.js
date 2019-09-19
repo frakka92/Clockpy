@@ -55,12 +55,16 @@ function getLocation(weather) {
                 success: function (res) {
                     //console.log(res["main"]["temp"].toFixed(1));
                     $("#temperature").html(res["main"]["temp"].toFixed(1));
-                    $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
-                }
+
+                    if (typeof weather[res["weather"][0]["icon"]] == 'undefined')
+                        $("#weather").html("<i class=\"fas fa-hashtag\"></i>");
+                    else
+                        $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
+            }
             });
 
-        });
-    } else {
-        console.log("Browser doesn't support geolocation!");
-    }
+    });
+} else {
+    console.log("Browser doesn't support geolocation!");
+}
 }

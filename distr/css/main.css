@@ -40,7 +40,7 @@ html, body {
 
 #temperature {
     text-align: center;
-    font-size: 75%;
+    font-size: 65%;
     z-index: 2;
     justify-content: center;
     width: 100%;
