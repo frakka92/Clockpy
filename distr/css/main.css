@@ -39,11 +39,20 @@ html, body {
 }
 
 #temperature {
-    height: 50%;
     text-align: center;
+    font-size: 75%;
     z-index: 2;
-    display: inline-block;
     justify-content: center;
+    width: 100%;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    vertical-align: sub;
+}
+
+img {
+    width: 100%;
+    height: 100%;
 }
 
 #weather_temp_box {
@@ -62,10 +71,10 @@ html, body {
     color: #D7D7D7;
 }
 
-.border_night{
+.border_night {
     border-color: #D7D7D7;
 }
 
-.wi .fa-sm{
+.wi .fa-sm {
     font-size: .875em;
 }
