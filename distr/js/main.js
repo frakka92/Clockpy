@@ -1,8 +1,25 @@
 $(document).ready(function () {
     var SECONDS = 1000;
+    var weather =          { '01d' : 'wi-day-sunny',
+    '01n' : 'wi-night-clear',
+    '02d' : 'wi-day-sunny-overcast',
+    '02n' : 'wi-night-cloudy',
+    '03d' : 'wi-day-cloudy',
+    '03n' : 'wi-night-cloudy',
+    '04d' : 'wi-cloudy',
+    '04n' : 'wi-cloudy',
+    '09d' : 'wi-rain',
+    '09n' : 'wi-rain',
+    '10d' : 'wi-day-rain',
+    '10n' : 'wi-night-rain',
+    '11d' : 'wi-day-thunderstorm',
+    '11n' : 'wi-night-thunderstorm',
+    '13d' : 'wi-day-snow',
+    '13n' : 'wi-night-snow'
+    };
 
     setInterval(updateClock, SECONDS);
-    setInterval(getLocation, SECONDS * 25);
+    setInterval(getLocation(weather), SECONDS * 25);
 });
 
 function updateClock() {
@@ -17,7 +34,7 @@ function updateClock() {
     $("#clock").html(time);
 }
 
-function getLocation() {
+function getLocation(weather) {
 
     if ("geolocation" in navigator) { //check geolocation available 
         //try to get user current location using getCurrentPosition() method
@@ -34,6 +51,7 @@ function getLocation() {
                 success: function (res) {
                     console.log(res["main"]["temp"].toFixed(1));
                     $("#temperature").html(res["main"]["temp"].toFixed(1));
+                    $("#weather").html("<i class=\"wi " +  weather[res["weather"][0]["icon"]] + "\"></i>");
                 }
             });
 
