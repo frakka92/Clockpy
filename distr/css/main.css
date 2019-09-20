@@ -1,15 +1,8 @@
 @import url('./font.css');
 html, body {
+    position: fixed;
     background-color: #D7D7D7;
     font-family: 'Raleway', sans-serif;
-    font-size: 15vw;
-    color: black;
-    text-align: center;
-    height: 100vw;
-    width: 100vw;
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 .fullbox {
@@ -20,28 +13,57 @@ html, body {
     right: 0px;
 }
 
-#clock {
-    height: 100%;
+#city {
+    height: 20%;
     z-index: 0;
+    font-size: 25%;
+    padding: 2%;
+    justify-content: center;
+}
+
+#clock {
+    height: 60%;
+    z-index: 1;
     font-size: larger;
     padding: 2%;
     justify-content: center;
-    border-right: 25px solid #000;
+}
+
+#sun {
+    z-index: 1;
+    font-size: larger;
+    padding: 2%;
+    justify-content: center;
+    text-align: center;
+}
+
+#sun_time {
+    z-index: 2222;
+    font-size: larger;
+    padding: 2%;
+    justify-content: center;
+}
+
+#sunupdown {
+    height: 20%;
+    z-index: 1;
+    font-size: larger;
+    padding: 2%;
+    justify-content: center;
 }
 
 #weather {
     height: 50%;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     justify-content: center;
     padding: 2%;
-    border-bottom: 25px solid #000;
 }
 
 #temperature {
     text-align: center;
     font-size: 65%;
-    z-index: 2;
+    z-index: 3;
     justify-content: center;
     width: 100%;
     position: relative;
@@ -55,14 +77,17 @@ img {
     height: 100%;
 }
 
-#weather_temp_box {
+#weather_temp_hum {
     margin: 0 auto;
-    border-left: 25px solid #000;
 }
 
 #thermometer_box {
-    height: 50%;
-    border-top: 25px solid #000;
+    height: 25%;
+    padding: 2%;
+}
+
+#humidity_box {
+    height: 25%;
     padding: 2%;
 }
 
@@ -76,5 +101,36 @@ img {
 }
 
 .wi .fa-sm {
-    font-size: .875em;
+    font-size: 0.5em;
+}
+
+/* RESPONSIVE **/
+
+html {
+    font-size: 4rem;
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 4rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+    html {
+        font-size: 10rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 11rem;
+    }
 }

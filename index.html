@@ -27,44 +27,91 @@
 
 </head>
 
-<body style="display:flex; justify-content:center; align-items:center">
+<body class="fullbox">
 
-    <div class="row fullbox">
+    <section>
+        <div class="row">
 
-        <div class="col-7 centered">
-            <div class="row align-items-center" id="clock">
-                <img src="./img/loading.gif" style="width:50%; height:50%">
-            </div>
-        </div>
-
-        <div class="col-5 centered" id="weather_temp_box">
-            <div class="row align-items-center" id="weather">
-                <img src="./img/loading.gif" style="width:50%; height:75%">
-            </div>
-
-            <div class="row align-items-center" id="thermometer_box">
-
-                <div class="col-3 centered">
-                    <i class="fas fa-thermometer-half fa-sm"></i>
-                </div>
-
-                <div class="col-6 centered">
-                    <div id="temperature">
-                        <img src="./img/loading.gif">
+            <!-- City - Clock - Sunset -->
+            <div class="col-6" id="city_clock_sun">
+                <div class="row align-items-center" id="city">
+                    <div class="col-12">
+                        <img src="./img/loading.gif" style="width:auto; height:auto">
                     </div>
                 </div>
 
-                <div class="col-3 centered">
-                    <i class="wi wi-celsius fa-sm"></i>
+                <div class="row align-items-center" id="clock">
+                    <div class="col-12">
+                        <img src="./img/loading.gif" style="width:auto; height:auto">
+                    </div>
                 </div>
+
+                <div class="row align-items-center" id="sunupdown">
+
+                    <div class="col-6" id="sun">
+                        <img src="./img/loading.gif" style="width:auto; height:auto">
+                    </div>
+
+                    <div class="col-6" id="sun_time">
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="col-6" id="weather_temp_hum">
+                <div class="row align-items-center" id="weather">
+                    <div class="col-12">
+                        <img src="./img/loading.gif" style="width:auto; height:auto">
+                    </div>
+                </div>
+                
+                <div class="row" id="thermometer_box">
+
+                    <div class="col-3">
+                        <i class="fas fa-thermometer-half fa-sm"></i>
+                    </div>
+
+                    <div class="col-6">
+                        <div id="temperature">
+                            <img src="./img/loading.gif" style="width:auto; height:auto">
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <i class="wi wi-celsius fa-sm"></i>
+                    </div>
+                </div>
+
+                <div class="row" id="humidity_box">
+
+                    <div class="col-5">
+                        <i class="wi wi-humidity fa-sm"></i>
+                    </div>
+
+                    <div class="col-7">
+                        <div id="humidity">
+                            <img src="./img/loading.gif" style="width:auto; height:auto">
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- **** All JS Files ***** -->
-        <script src="./distr/js/bootstrap.min.js"> </script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
-        <script type="text/javascript" src="./distr/js/main.js"></script>
+        <div class="clearfix"></div>
+
+    </section>
+
+    <!-- **** All JS Files ***** -->
+    <script src="./distr/js/bootstrap.min.js"> </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+    <script type="text/javascript" src="./distr/js/main.js"></script>
 </body>
 
 </html>

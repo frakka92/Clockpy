@@ -20,11 +20,11 @@ $(document).ready(function () {
         '50n': 'wi-owm-741'
     };
     getLocation(weather);
-    
+
     setInterval(updateClock, SECONDS);
     setInterval(function () {
         getLocation(weather);
-    }, SECONDS * 5);
+    }, SECONDS * 25);
 
 });
 
@@ -39,6 +39,7 @@ function updateClock() {
 
     //console.log(time);
     $("#clock").html(time);
+
 }
 
 function getLocation(weather) {
@@ -57,16 +58,24 @@ function getLocation(weather) {
                 success: function (res) {
                     //console.log(res["main"]["temp"].toFixed(1));
                     $("#temperature").html(res["main"]["temp"].toFixed(1));
+                    $("#humidity").html(res["main"]["humidity"]);
+                    $("#city").html(res["name"]);
 
                     if (typeof weather[res["weather"][0]["icon"]] == 'undefined')
                         $("#weather").html("<i class=\"fas fa-hashtag\"></i>");
                     else
                         $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
-            }
+
+                    if (Date.now() > (res["sunset"] + 60 * 60))
+                        $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
+                    else
+                        $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
+
+                }
             });
 
-    });
-} else {
-    console.log("Browser doesn't support geolocation!");
-}
+        });
+    } else {
+        console.log("Browser doesn't support geolocation!");
+    }
 }
