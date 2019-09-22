@@ -79,3 +79,7 @@ function getLocation(weather) {
         console.log("Browser doesn't support geolocation!");
     }
 }
+
+$("h1").fitText(1.0);
+
+$("h4").fitText(1.0);
