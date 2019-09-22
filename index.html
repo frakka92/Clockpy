@@ -27,81 +27,74 @@
 
 </head>
 
-<body class="fullbox">
+<body>
 
-    <section>
-        <div class="row">
+    <section class="watch-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-6 col-lg-6 col-xl-6 city-clock-sun-box">
 
-            <!-- City - Clock - Sunset -->
-            <div class="col-6" id="city_clock_sun">
-                <div class="row align-items-center" id="city">
-                    <div class="col-12">
-                        <img src="./img/loading.gif" style="width:auto; height:auto">
+                    <div class="row align-items-center city">
+                        <div class="col-12">
+                            <h4 id="city"> </h4>
+
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center clock">
+                        <div class="col-12">
+                            <h4 id="clock"> </h4>
+
+                        </div>
+                    </div>
+                    <div class="row align-items-center" id="sunupdown">
+
+                        <div class="col-6" id="sun">
+
+                        </div>
+
+                        <div class="col-6" id="sun_time">
+                        </div>
                     </div>
                 </div>
 
-                <div class="row align-items-center" id="clock">
-                    <div class="col-12">
-                        <img src="./img/loading.gif" style="width:auto; height:auto">
-                    </div>
-                </div>
+                <div class="col-6 col-lg-6 col-xl-6 thermometer-box">
 
-                <div class="row align-items-center" id="sunupdown">
+                    <div class="row align-items-center weather">
 
-                    <div class="col-6" id="sun">
-                        <img src="./img/loading.gif" style="width:auto; height:auto">
+                        <div class="col-12">
+                            <h4 id="weather"> </h4>
+                        </div>
+
                     </div>
 
-                    <div class="col-6" id="sun_time">
+                    <div class="row align-items-center temperature">
+                        <div class="col-3">
 
+                        </div>
+                        <div class="col-6">
+                            <h4 id="temperature"> </h4>
+                        </div>
+
+                        <div class="col-3">
+
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center humidity-box">
+
+                        <div class="col-6">
+
+                        </div>
+
+                        <div class="col-6" id="humidity">
+                        </div>
                     </div>
 
 
 
                 </div>
             </div>
-
-            <div class="col-6" id="weather_temp_hum">
-                <div class="row align-items-center" id="weather">
-                    <div class="col-12">
-                        <img src="./img/loading.gif" style="width:auto; height:auto">
-                    </div>
-                </div>
-                
-                <div class="row" id="thermometer_box">
-
-                    <div class="col-3">
-                        <i class="fas fa-thermometer-half fa-sm"></i>
-                    </div>
-
-                    <div class="col-6">
-                        <div id="temperature">
-                            <img src="./img/loading.gif" style="width:auto; height:auto">
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <i class="wi wi-celsius fa-sm"></i>
-                    </div>
-                </div>
-
-                <div class="row" id="humidity_box">
-
-                    <div class="col-5">
-                        <i class="wi wi-humidity fa-sm"></i>
-                    </div>
-
-                    <div class="col-7">
-                        <div id="humidity">
-                            <img src="./img/loading.gif" style="width:auto; height:auto">
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
         </div>
 
         <div class="clearfix"></div>
@@ -109,8 +102,12 @@
     </section>
 
     <!-- **** All JS Files ***** -->
-    <script src="./distr/js/bootstrap.min.js"> </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+    <script src="./distr/js/bootstrap.min.js"> </script>
+    <script src="./distr/js/jquery.fittext.js"></script>
+    <script>
+        jQuery("#responsive_headline").fitText();
+    </script>
     <script type="text/javascript" src="./distr/js/main.js"></script>
 </body>
 
