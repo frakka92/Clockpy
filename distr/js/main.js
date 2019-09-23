@@ -17,6 +17,7 @@ $(document).ready(function () {
         '11n': 'wi-night-thunderstorm',
         '13d': 'wi-day-snow',
         '13n': 'wi-night-snow',
+        '50d': 'wi-owm-701',
         '50n': 'wi-owm-741'
     };
     getLocation(weather);
@@ -62,15 +63,22 @@ function getLocation(weather) {
                     $("#city").html(res["name"]);
 
                     if (typeof weather[res["weather"][0]["icon"]] == 'undefined')
-                        $("#weather").html("<i class=\"fas fa-hashtag\"></i>");
+                        $("#weather").html("<i class=\"wi wi-na\"></i>");
                     else
                         $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
 
-                    if (Date.now() > (res["sunset"] + 60 * 60))
+                    if (Math.floor(new Date().getTime()/1000.0) > (res["sys"]["sunset"] + 60 * 60)) {
                         $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
-                    else
+                        var sunrise = new Date(res["sys"]["sunrise"] * 1000);
+                        //console.log("sunrise " +sunrise);
+                        $("#sun-time").html(sunrise.getHours() + ":" + sunrise.getMinutes());
+                    }
+                    else {
                         $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
-
+                        var sunset = new Date(res["sys"]["sunset"] * 1000);
+                        //console.log("sunset " +sunset.getHours() + ":" + sunset.getMinutes());
+                        $("#sun-time").html(sunset.getHours() + ":" + sunset.getMinutes());
+                    }
                 }
             });
 
@@ -79,7 +87,3 @@ function getLocation(weather) {
         console.log("Browser doesn't support geolocation!");
     }
 }
-
-$("h1").fitText(1.0);
-
-$("h4").fitText(1.0);
