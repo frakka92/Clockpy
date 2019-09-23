@@ -67,16 +67,16 @@ function getLocation(weather) {
                     else
                         $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
 
-                    if (Math.floor(new Date().getTime()/1000.0) > (res["sys"]["sunset"] + 60 * 60)) {
+                    if (Math.floor(new Date().getTime() / 1000.0) > (res["sys"]["sunset"] + 60 * 60)) {
                         $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
                         var sunrise = new Date(res["sys"]["sunrise"] * 1000);
-                        //console.log("sunrise " +sunrise);
+                        //console.log("sunrise " + sunrise);
                         $("#sun-time").html(sunrise.getHours() + ":" + sunrise.getMinutes());
                     }
                     else {
                         $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
                         var sunset = new Date(res["sys"]["sunset"] * 1000);
-                        //console.log("sunset " +sunset.getHours() + ":" + sunset.getMinutes());
+                        //console.log("sunset " + sunset.getHours() + ":" + sunset.getMinutes());
                         $("#sun-time").html(sunset.getHours() + ":" + sunset.getMinutes());
                     }
                 }
