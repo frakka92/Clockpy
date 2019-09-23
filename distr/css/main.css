@@ -7,35 +7,24 @@ html, body {
 }
 
 .row {
-    border: 1px solid red;
+    border: 1px solid #000;
+}
+
+.container {
+    max-width: 100% !important;
 }
 
 section {
-    width: 100%;
     height: 100%;
 }
 
-.watch-area {
-    position: relative;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-}
-
 /* First Box */
-
-.city-clock-sun-box {
-    width: 100%;
-}
 
 .city {
     height: 20%;
 }
 
 #city {
-    z-index: 0;
-    font-size: 25%;
     padding: 2%;
     text-align: center;
 }
@@ -45,44 +34,27 @@ section {
 }
 
 #clock {
-    z-index: 1;
-    font-size: larger;
     padding: 2%;
     text-align: center;
 }
 
 #sun {
-    z-index: 1;
-    font-size: larger;
     padding: 2%;
     justify-content: center;
     text-align: center;
 }
 
-#sun_time {
-    z-index: 2222;
-    font-size: larger;
+#sun-time {
     padding: 2%;
-    justify-content: center;
+    text-align: center;
 }
 
 #sunupdown {
     height: 20%;
-    z-index: 1;
-    font-size: larger;
     padding: 2%;
-    justify-content: center;
 }
 
 /* Second box*/
-
-.weather-temp-hum-box {
-    margin: 0 auto;
-}
-
-.thermometer-box {
-    height: 100%;
-}
 
 .humidity-box {
     height: 20%;
@@ -100,34 +72,90 @@ section {
 
 #temperature {
     text-align: center;
-    font-size: 65%;
-    z-index: 3;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    min-width: 100%;
-    min-height: 100%;
-    vertical-align: sub;
+}
+
+#temperature-icon {
+    text-align: right;
+}
+
+#celsius-icon {
+    text-align: left;
+}
+
+#humidity-icon {
+    text-align: right;
 }
 
 #humidity {
-    text-align: center;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-}
-
-.night_mode {
-    background-color: black;
-    color: #D7D7D7;
-}
-
-.border_night {
-    border-color: #D7D7D7;
+    text-align: left;
 }
 
 .wi .fa-sm {
     font-size: 0.5em;
+}
+
+/** RESPONSIVE **/
+
+/*  Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap
+Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 300px) {
+    .html, body {
+        font-size: 30px;
+    }
+    #clock {
+        font-size: 50px;
+    }
+    #temperature {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 576px) {
+    .html, body {
+        font-size: 35px;
+    }
+    #clock {
+        font-size: 75px;
+    }
+    #temperature {
+        font-size: 55px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px) */
+
+@media (min-width: 1200px) {
+    .html, body {
+        font-size: 50px;
+    }
+    #clock {
+        font-size: 150px;
+    }
+    #temperature {
+        font-size: 100px;
+    }
+}
+
+/* XXL breakpoints **/
+
+@media (min-width: 1440px) {
+    .html, body {
+        font-size: 85px;
+    }
+    #clock {
+        font-size: 250px;
+    }
+    #temperature {
+        font-size: 150px;
+    }
 }
