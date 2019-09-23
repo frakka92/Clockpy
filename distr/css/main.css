@@ -94,6 +94,17 @@ section {
     font-size: 0.5em;
 }
 
+/** Night mode */
+
+.night-mode {
+    background-color: #000;
+    color: #b0c4de;
+}
+
+.row-night-mode {
+    border: 1px solid #FFF;
+}
+
 /** RESPONSIVE **/
 
 /*  Extra small devices (portrait phones, less than 576px)

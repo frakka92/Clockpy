@@ -33,10 +33,7 @@ function updateClock() {
 
     var today = new Date();
 
-    if (today.getMinutes() <= 9)
-        var time = today.getHours() + ':0' + today.getMinutes();
-    else
-        var time = today.getHours() + ':' + today.getMinutes();
+    var time = today.getHours() + (today.getMinutes() <= 9 ? ':0' : ':') + today.getMinutes();
 
     //console.log(time);
     $("#clock").html(time);
@@ -71,13 +68,26 @@ function getLocation(weather) {
                         $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
                         var sunrise = new Date(res["sys"]["sunrise"] * 1000);
                         //console.log("sunrise " + sunrise);
-                        $("#sun-time").html(sunrise.getHours() + ":" + sunrise.getMinutes());
+                        $("#sun-time").html(
+                            (sunrise.getHours() <= 9 ? '0' + sunrise.getHours() : sunrise.getHours())
+                            + ":" +
+                            (sunrise.getMinutes() <= 9 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()));
+
+                        $("#html,body").addClass("night-mode");
+                        $(".row").addClass("row-night-mode");
                     }
                     else {
+                        if ($("#html,body").hasClass("night-mode") && $(".row").addClass("row-night-mode")) {
+                            $("#html,body").removeClass("night-mode");
+                            $(".row").removeClass("row-night-mode");
+                        }
                         $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
                         var sunset = new Date(res["sys"]["sunset"] * 1000);
                         //console.log("sunset " + sunset.getHours() + ":" + sunset.getMinutes());
                         $("#sun-time").html(sunset.getHours() + ":" + sunset.getMinutes());
+
+
+
                     }
                 }
             });
