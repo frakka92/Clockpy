@@ -32,68 +32,75 @@ $(document).ready(function () {
 function updateClock() {
 
     var today = new Date();
-
     var time = today.getHours() + (today.getMinutes() <= 9 ? ':0' : ':') + today.getMinutes();
-
-    //console.log(time);
     $("#clock").html(time);
 
 }
 
 function getLocation(weather) {
 
-    if ("geolocation" in navigator) { //check geolocation available 
-        //try to get user current location using getCurrentPosition() method
+    navigator.geolocation.getCurrentPosition(function (position) {
 
-        navigator.geolocation.getCurrentPosition(function (position) {
+        var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
+        console.log(url);
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function (res) {
+                $("#temperature").html(res["main"]["temp"].toFixed(1));
+                $("#humidity").html(res["main"]["humidity"]);
+                $("#city").html(res["name"]);
 
-            var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=metric&APPID=c3d53da31b318530c87a1b37d0b899d8";
-            console.log(url);
-            $.ajax({
-                url: url,
-                type: 'GET',
-                dataType: 'json', // added data type
-                success: function (res) {
-                    //console.log(res["main"]["temp"].toFixed(1));
-                    $("#temperature").html(res["main"]["temp"].toFixed(1));
-                    $("#humidity").html(res["main"]["humidity"]);
-                    $("#city").html(res["name"]);
+                if (typeof weather[res["weather"][0]["icon"]] == 'undefined')
+                    $("#weather").html("<i class=\"wi wi-na\"></i>");
+                else
+                    $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
 
-                    if (typeof weather[res["weather"][0]["icon"]] == 'undefined')
-                        $("#weather").html("<i class=\"wi wi-na\"></i>");
-                    else
-                        $("#weather").html("<i class=\"wi " + weather[res["weather"][0]["icon"]] + "\"></i>");
+                if (Math.floor(new Date().getTime() / 1000.0) > (res["sys"]["sunset"] + 60 * 60)) {
+                    $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
+                    var sunrise = new Date(res["sys"]["sunrise"] * 1000);
 
-                    if (Math.floor(new Date().getTime() / 1000.0) > (res["sys"]["sunset"] + 60 * 60)) {
-                        $("#sun").html("<i class=\"wi wi-sunrise fa-sm\"></i>");
-                        var sunrise = new Date(res["sys"]["sunrise"] * 1000);
-                        //console.log("sunrise " + sunrise);
-                        $("#sun-time").html(
-                            (sunrise.getHours() <= 9 ? '0' + sunrise.getHours() : sunrise.getHours())
-                            + ":" +
-                            (sunrise.getMinutes() <= 9 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()));
+                    $("#sun-time").html(
+                        (sunrise.getHours() <= 9 ? '0' + sunrise.getHours() : sunrise.getHours())
+                        + ":" +
+                        (sunrise.getMinutes() <= 9 ? '0' + sunrise.getMinutes() : sunrise.getMinutes()));
 
-                        $("#html,body").addClass("night-mode");
-                        $(".row").addClass("row-night-mode");
-                    }
-                    else {
-                        if ($("#html,body").hasClass("night-mode") && $(".row").addClass("row-night-mode")) {
-                            $("#html,body").removeClass("night-mode");
-                            $(".row").removeClass("row-night-mode");
-                        }
-                        $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
-                        var sunset = new Date(res["sys"]["sunset"] * 1000);
-                        //console.log("sunset " + sunset.getHours() + ":" + sunset.getMinutes());
-                        $("#sun-time").html(sunset.getHours() + ":" + sunset.getMinutes());
-
-
-
-                    }
+                    $("#html,body").addClass("night-mode");
+                    $(".row").addClass("row-night-mode");
                 }
-            });
+                else {
+                    if ($("#html,body").hasClass("night-mode") && $(".row").addClass("row-night-mode")) {
+                        $("#html,body").removeClass("night-mode");
+                        $(".row").removeClass("row-night-mode");
+                    }
+                    $("#sun").html("<i class=\"wi wi-sunset fa-sm\"></i>");
+                    var sunset = new Date(res["sys"]["sunset"] * 1000);
+       
+                    $("#sun-time").html(sunset.getHours() + ":" + sunset.getMinutes());
 
+
+
+                }
+            }
         });
-    } else {
-        console.log("Browser doesn't support geolocation!");
-    }
+
+    }, function (error) {
+
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                console.log("Denied request for Geolocation.")
+                break;
+            case error.POSITION_UNAVAILABLE:
+                console.log("Location unavailable.")
+                break;
+            case error.TIMEOUT:
+                console.log("Location request timed out.")
+                break;
+            case error.UNKNOWN_ERROR:
+                console.log("An unknown error occurred.")
+                break;
+        }
+    });
+
 }
