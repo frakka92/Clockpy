@@ -27,6 +27,7 @@ section {
 #city {
     padding: 2%;
     text-align: center;
+    white-space: nowrap;
 }
 
 .clock {
@@ -114,6 +115,9 @@ Small devices (landscape phones, 576px and up) */
 @media (min-width: 300px) {
     .html, body {
         font-size: 30px;
+    }
+    #city {
+        font-size: 25px;
     }
     #clock {
         font-size: 50px;
