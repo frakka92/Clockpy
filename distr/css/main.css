@@ -1,94 +1,220 @@
-@import url('./font.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #D7D7D7;
-    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
 }
 
 .row {
-    border: 1px solid #000;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 0.5% !important;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    padding: 1% !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .container {
     max-width: 100% !important;
+    padding: 0 !important;
 }
 
 section {
     height: 100%;
+    padding: 0.5%;
 }
 
 /* First Box */
 
 .city {
-    height: 20%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #city {
-    padding: 2%;
+    padding: 0.5%;
     text-align: center;
     white-space: nowrap;
+    color: #2d3748;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    width: 100%;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .clock {
-    height: 60%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #clock {
-    padding: 2%;
+    padding: 0;
     text-align: center;
+    color: #1a365d;
+    font-weight: 700;
+    letter-spacing: 0px;
+    white-space: nowrap;
+    font-size: 2.5rem;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#date {
+    padding: 0.5%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #4a5568;
+    font-weight: 500;
+    letter-spacing: 0px;
+    width: 100%;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #sun {
-    padding: 2%;
+    padding: 0.5%;
     justify-content: center;
     text-align: center;
+    color: #d69e2e;
+    font-size: 1.5em;
 }
 
 #sun-time {
-    padding: 2%;
+    padding: 0.5%;
     text-align: center;
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #sunupdown {
     height: 20%;
-    padding: 2%;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* Second box*/
 
 .humidity-box {
     height: 20%;
-    padding: 2%;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .weather {
     height: 20%;
     text-align: center;
+    color: #3182ce;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#weather {
+    color: #3182ce;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    overflow: hidden;
 }
 
 .temperature {
     height: 60%;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
 }
 
 #temperature {
     text-align: center;
+    color: #ed8936;
+    font-weight: 700;
+    min-width: 50px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #temperature-icon {
-    text-align: right;
+    text-align: center;
+    color: #ed8936;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #celsius-icon {
-    text-align: left;
+    text-align: center;
+    color: #ed8936;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #humidity-icon {
-    text-align: right;
+    text-align: center;
+    color: #38b6b6;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #humidity {
-    text-align: left;
+    text-align: center;
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 1.2rem;
+    min-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .wi .fa-sm {
@@ -98,50 +224,316 @@ section {
 /** Night mode */
 
 .night-mode {
-    background-color: #000;
-    color: #b0c4de;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: #f7fafc;
+    transition: background 0.3s ease;
+}
+
+.night-mode #city {
+    color: #e2e8f0;
+}
+
+.night-mode #clock {
+    color: #cbd5e0;
+}
+
+.night-mode #date {
+    color: #a0aec0;
+}
+
+.night-mode #sun {
+    color: #fbd38d;
+}
+
+.night-mode #sun-time {
+    color: #cbd5e0;
+}
+
+.night-mode #weather {
+    color: #63b3ed;
+}
+
+.night-mode #temperature {
+    color: #fc8181;
+}
+
+.night-mode #temperature-icon,
+.night-mode #celsius-icon {
+    color: #fc8181;
+}
+
+.night-mode #humidity-icon {
+    color: #81e6d9;
+}
+
+.night-mode #humidity {
+    color: #cbd5e0;
 }
 
 .row-night-mode {
-    border: 1px solid #FFF;
+    background: rgba(45, 55, 72, 0.9);
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /** RESPONSIVE **/
 
-/*  Extra small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap
-Small devices (landscape phones, 576px and up) */
+/* Extra small devices (landscape phones and portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .row {
+        margin: 0.75% !important;
+        padding: 1% !important;
+        border-radius: 15px;
+    }
 
-@media (min-width: 300px) {
-    .html, body {
-        font-size: 30px;
+    section {
+        padding: 1%;
     }
-    #city {
-        font-size: 25px;
+
+    .city { height: 12%; }
+    #city { font-size: 0.9rem; }
+
+    .clock { height: 35%; }
+    #clock { font-size: 1.8rem; }
+
+    .date { height: 20%; }
+    #date { font-size: 0.65rem; }
+
+    #sunupdown { height: 18%; }
+    #sun { font-size: 1.2rem; }
+    #sun-time { font-size: 0.75rem; }
+
+    .weather { height: 18%; }
+    #weather { font-size: 1.8rem; }
+
+    .temperature { height: 50%; }
+    #temperature { font-size: 1rem; }
+    #temperature-icon { font-size: 1rem; }
+    #celsius-icon { font-size: 0.7rem; }
+
+    .humidity-box { height: 18%; }
+    #humidity-icon { font-size: 1rem; }
+    #humidity { font-size: 0.75rem; }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .row {
+        margin: 0.5% !important;
+        padding: 1% !important;
+        border-radius: 18px;
     }
-    #clock {
-        font-size: 50px;
+
+    section {
+        padding: 1%;
     }
-    #temperature {
-        font-size: 30px;
+
+    .city { height: 13%; }
+    #city { font-size: 1rem; }
+
+    .clock { height: 37%; }
+    #clock { font-size: 2rem; }
+
+    .date { height: 22%; }
+    #date { font-size: 0.7rem; }
+
+    #sunupdown { height: 18%; }
+    #sun { font-size: 1.3rem; }
+    #sun-time { font-size: 0.8rem; }
+
+    .weather { height: 18%; }
+    #weather { font-size: 2rem; }
+
+    .temperature { height: 55%; }
+    #temperature { font-size: 1.1rem; }
+    #temperature-icon { font-size: 1.1rem; }
+    #celsius-icon { font-size: 0.75rem; }
+
+    .humidity-box { height: 18%; }
+    #humidity-icon { font-size: 1.1rem; }
+    #humidity { font-size: 0.8rem; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .row {
+        margin: 0.5% !important;
+        padding: 1% !important;
+        border-radius: 18px;
+    }
+
+    section {
+        padding: 0.75%;
+    }
+
+    .city { height: 14%; }
+    #city { font-size: 1rem; }
+
+    .clock { height: 38%; }
+    #clock { font-size: 2.2rem; }
+
+    .date { height: 23%; }
+    #date { font-size: 0.75rem; }
+
+    #sunupdown { height: 19%; }
+    #sun { font-size: 1.4rem; }
+    #sun-time { font-size: 0.85rem; }
+
+    .weather { height: 19%; }
+    #weather { font-size: 2.2rem; }
+
+    .temperature { height: 57%; }
+    #temperature { font-size: 1.15rem; }
+    #temperature-icon { font-size: 1.15rem; }
+    #celsius-icon { font-size: 0.8rem; }
+
+    .humidity-box { height: 19%; }
+    #humidity-icon { font-size: 1.15rem; }
+    #humidity { font-size: 0.85rem; }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .row {
+        margin: 0.5% !important;
+        padding: 1% !important;
+        border-radius: 20px;
+    }
+
+    section {
+        padding: 0.5%;
+    }
+
+    .city { height: 15%; }
+    #city { font-size: 1rem; }
+
+    .clock { height: 40%; }
+    #clock { font-size: 2.5rem; }
+
+    .date { height: 25%; }
+    #date { font-size: 0.8rem; }
+
+    #sunupdown { height: 20%; }
+    #sun { font-size: 1.5rem; }
+    #sun-time { font-size: 1rem; }
+
+    .weather { height: 20%; }
+    #weather { font-size: 2.5rem; }
+
+    .temperature { height: 60%; }
+    #temperature { font-size: 1.2rem; }
+    #temperature-icon { font-size: 1.2rem; }
+    #celsius-icon { font-size: 0.9rem; }
+
+    .humidity-box { height: 20%; }
+    #humidity-icon { font-size: 1.2rem; }
+    #humidity { font-size: 1.2rem; }
+}
+
+/* Extra Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .row {
+        margin: 0.75% !important;
+        padding: 0.75% !important;
+        border-radius: 20px;
+    }
+
+    section {
+        padding: 0.75%;
+    }
+
+    .city { height: 12%; }
+    #city { 
+        font-size: 0.85rem;
+        max-width: 90%;
+    }
+
+    .clock { height: 38%; }
+    #clock { 
+        font-size: 1.4rem;
+        max-width: 85%;
+    }
+
+    .date { height: 22%; }
+    #date { 
+        font-size: 0.65rem;
+        max-width: 90%;
+    }
+
+    #sunupdown { height: 18%; }
+    #sun { font-size: 1.1rem; }
+    #sun-time { 
+        font-size: 0.75rem;
+        max-width: 90%;
+    }
+
+    .weather { height: 18%; }
+    #weather { font-size: 1.8rem; }
+
+    .temperature { height: 55%; }
+    #temperature { 
+        font-size: 0.9rem;
+        max-width: 85%;
+    }
+    #temperature-icon { font-size: 0.95rem; }
+    #celsius-icon { font-size: 0.7rem; }
+
+    .humidity-box { height: 18%; }
+    #humidity-icon { font-size: 0.95rem; }
+    #humidity { 
+        font-size: 0.9rem;
+        max-width: 85%;
     }
 }
+
+/* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {
     .html, body {
         font-size: 35px;
     }
+    #city {
+        font-size: 1.5em;
+    }
     #clock {
-        font-size: 75px;
+        font-size: 4.5em;
+    }
+    #date {
+        font-size: 1em;
+    }
+    #sun {
+        font-size: 2em;
+    }
+    #sun-time {
+        font-size: 1.2em;
+    }
+    #weather {
+        font-size: 2.5em;
     }
     #temperature {
-        font-size: 55px;
+        font-size: 2.5em;
+    }
+    #temperature-icon {
+        font-size: 1.5em;
+    }
+    #celsius-icon {
+        font-size: 1em;
+    }
+    #humidity-icon {
+        font-size: 1.5em;
+    }
+    #humidity {
+        font-size: 1.2em;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .row {
+        margin: 0.5% !important;
+    }
+}
 
 /* Large devices (desktops, 992px and up) */
 
@@ -153,24 +545,78 @@ Small devices (landscape phones, 576px and up) */
     .html, body {
         font-size: 50px;
     }
+    #city {
+        font-size: 2em;
+    }
     #clock {
-        font-size: 150px;
+        font-size: 8em;
+    }
+    #date {
+        font-size: 1.8em;
+    }
+    #sun {
+        font-size: 2.5em;
+    }
+    #sun-time {
+        font-size: 1.8em;
+    }
+    #weather {
+        font-size: 4em;
     }
     #temperature {
-        font-size: 100px;
+        font-size: 4.5em;
+    }
+    #temperature-icon {
+        font-size: 2.5em;
+    }
+    #celsius-icon {
+        font-size: 1.8em;
+    }
+    #humidity-icon {
+        font-size: 2.5em;
+    }
+    #humidity {
+        font-size: 1.8em;
     }
 }
 
-/* XXL breakpoints **/
+/* XXL breakpoints (1440px+) */
 
 @media (min-width: 1440px) {
     .html, body {
         font-size: 85px;
     }
+    #city {
+        font-size: 2.5em;
+    }
     #clock {
-        font-size: 250px;
+        font-size: 14em;
+    }
+    #date {
+        font-size: 2.5em;
+    }
+    #sun {
+        font-size: 4em;
+    }
+    #sun-time {
+        font-size: 2.5em;
+    }
+    #weather {
+        font-size: 5em;
     }
     #temperature {
-        font-size: 150px;
+        font-size: 7em;
+    }
+    #temperature-icon {
+        font-size: 4em;
+    }
+    #celsius-icon {
+        font-size: 3em;
+    }
+    #humidity-icon {
+        font-size: 4em;
+    }
+    #humidity {
+        font-size: 2.5em;
     }
 }
