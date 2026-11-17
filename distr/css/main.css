@@ -38,7 +38,7 @@ section {
 /* First Box */
 
 .city {
-    height: 15%;
+    height: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@ section {
     color: #2d3748;
     font-weight: 600;
     letter-spacing: 0.5px;
-    font-size: 1rem;
+    font-size: 0.75rem;
     width: 100%;
     word-break: break-word;
     overflow: hidden;
@@ -59,7 +59,7 @@ section {
 }
 
 .clock {
-    height: 40%;
+    height: 23%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,14 +76,14 @@ section {
     font-weight: 700;
     letter-spacing: 0px;
     white-space: nowrap;
-    font-size: 2.5rem;
-    max-width: 95%;
+    font-size: 0.95rem;
+    max-width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .date {
-    height: 25%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,7 +92,7 @@ section {
 #date {
     padding: 0.5%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.55rem;
     color: #4a5568;
     font-weight: 500;
     letter-spacing: 0px;
@@ -107,7 +107,7 @@ section {
     justify-content: center;
     text-align: center;
     color: #d69e2e;
-    font-size: 1.5em;
+    font-size: 0.9em;
 }
 
 #sun-time {
@@ -115,13 +115,13 @@ section {
     text-align: center;
     color: #2d3748;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.65rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 #sunupdown {
-    height: 20%;
+    height: 9%;
     padding: 0.5%;
     display: flex;
     align-items: center;
@@ -132,7 +132,7 @@ section {
 /* Second box*/
 
 .humidity-box {
-    height: 20%;
+    height: 15%;
     padding: 0.5%;
     display: flex;
     align-items: center;
@@ -141,7 +141,7 @@ section {
 }
 
 .weather {
-    height: 20%;
+    height: 15%;
     text-align: center;
     color: #3182ce;
     padding: 0.5%;
@@ -152,7 +152,7 @@ section {
 
 #weather {
     color: #3182ce;
-    font-size: 2.5rem;
+    font-size: 0.8rem;
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
@@ -162,7 +162,7 @@ section {
 }
 
 .temperature {
-    height: 60%;
+    height: 20%;
     padding: 0.5%;
     display: flex;
     align-items: center;
@@ -175,15 +175,16 @@ section {
     color: #ed8936;
     font-weight: 700;
     min-width: 50px;
-    font-size: 1.2rem;
+    font-size: 0.72rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 85%;
 }
 
 #temperature-icon {
     text-align: center;
     color: #ed8936;
-    font-size: 1.2em;
+    font-size: 0.85em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +193,7 @@ section {
 #celsius-icon {
     text-align: center;
     color: #ed8936;
-    font-size: 0.9em;
+    font-size: 0.65em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +202,7 @@ section {
 #humidity-icon {
     text-align: center;
     color: #38b6b6;
-    font-size: 1.2em;
+    font-size: 0.85em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,10 +212,11 @@ section {
     text-align: center;
     color: #2d3748;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     min-width: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 85%;
 }
 
 .wi .fa-sm {
@@ -278,212 +280,194 @@ section {
 
 /** RESPONSIVE **/
 
-/* Extra small devices (landscape phones and portrait phones, less than 576px) */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .row {
-        margin: 0.75% !important;
-        padding: 1% !important;
-        border-radius: 15px;
-    }
-
-    section {
-        padding: 1%;
-    }
-
-    .city { height: 12%; }
-    #city { font-size: 0.9rem; }
-
-    .clock { height: 35%; }
-    #clock { font-size: 1.8rem; }
-
-    .date { height: 20%; }
-    #date { font-size: 0.65rem; }
-
-    #sunupdown { height: 18%; }
-    #sun { font-size: 1.2rem; }
-    #sun-time { font-size: 0.75rem; }
-
-    .weather { height: 18%; }
-    #weather { font-size: 1.8rem; }
-
-    .temperature { height: 50%; }
-    #temperature { font-size: 1rem; }
-    #temperature-icon { font-size: 1rem; }
-    #celsius-icon { font-size: 0.7rem; }
-
-    .humidity-box { height: 18%; }
-    #humidity-icon { font-size: 1rem; }
-    #humidity { font-size: 0.75rem; }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .row {
-        margin: 0.5% !important;
-        padding: 1% !important;
-        border-radius: 18px;
-    }
-
-    section {
-        padding: 1%;
-    }
-
-    .city { height: 13%; }
-    #city { font-size: 1rem; }
-
-    .clock { height: 37%; }
-    #clock { font-size: 2rem; }
-
-    .date { height: 22%; }
-    #date { font-size: 0.7rem; }
-
-    #sunupdown { height: 18%; }
-    #sun { font-size: 1.3rem; }
-    #sun-time { font-size: 0.8rem; }
-
-    .weather { height: 18%; }
-    #weather { font-size: 2rem; }
-
-    .temperature { height: 55%; }
-    #temperature { font-size: 1.1rem; }
-    #temperature-icon { font-size: 1.1rem; }
-    #celsius-icon { font-size: 0.75rem; }
-
-    .humidity-box { height: 18%; }
-    #humidity-icon { font-size: 1.1rem; }
-    #humidity { font-size: 0.8rem; }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .row {
-        margin: 0.5% !important;
-        padding: 1% !important;
-        border-radius: 18px;
-    }
-
-    section {
-        padding: 0.75%;
-    }
-
-    .city { height: 14%; }
-    #city { font-size: 1rem; }
-
-    .clock { height: 38%; }
-    #clock { font-size: 2.2rem; }
-
-    .date { height: 23%; }
-    #date { font-size: 0.75rem; }
-
-    #sunupdown { height: 19%; }
-    #sun { font-size: 1.4rem; }
-    #sun-time { font-size: 0.85rem; }
-
-    .weather { height: 19%; }
-    #weather { font-size: 2.2rem; }
-
-    .temperature { height: 57%; }
-    #temperature { font-size: 1.15rem; }
-    #temperature-icon { font-size: 1.15rem; }
-    #celsius-icon { font-size: 0.8rem; }
-
-    .humidity-box { height: 19%; }
-    #humidity-icon { font-size: 1.15rem; }
-    #humidity { font-size: 0.85rem; }
-}
-
-/* Large devices (desktops, 992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .row {
-        margin: 0.5% !important;
-        padding: 1% !important;
-        border-radius: 20px;
+        margin: 0.3% !important;
+        padding: 0.3% !important;
+        border-radius: 12px;
     }
 
     section {
         padding: 0.5%;
     }
 
-    .city { height: 15%; }
-    #city { font-size: 1rem; }
+    .city { height: 8%; }
+    #city { font-size: 0.75rem; }
 
-    .clock { height: 40%; }
-    #clock { font-size: 2.5rem; }
+    .clock { height: 23%; }
+    #clock { font-size: 0.92rem; max-width: 85%; }
 
-    .date { height: 25%; }
-    #date { font-size: 0.8rem; }
+    .date { height: 10%; }
+    #date { font-size: 0.52rem; }
 
-    #sunupdown { height: 20%; }
-    #sun { font-size: 1.5rem; }
-    #sun-time { font-size: 1rem; }
+    #sunupdown { height: 9%; }
+    #sun { font-size: 0.88rem; }
+    #sun-time { font-size: 0.6rem; }
 
-    .weather { height: 20%; }
-    #weather { font-size: 2.5rem; }
+    .weather { height: 15%; }
+    #weather { font-size: 0.75rem; }
 
-    .temperature { height: 60%; }
-    #temperature { font-size: 1.2rem; }
-    #temperature-icon { font-size: 1.2rem; }
-    #celsius-icon { font-size: 0.9rem; }
+    .temperature { height: 20%; }
+    #temperature { font-size: 0.68rem; }
+    #temperature-icon { font-size: 0.73rem; }
+    #celsius-icon { font-size: 0.54rem; }
 
-    .humidity-box { height: 20%; }
-    #humidity-icon { font-size: 1.2rem; }
-    #humidity { font-size: 1.2rem; }
+    .humidity-box { height: 15%; }
+    #humidity-icon { font-size: 0.73rem; }
+    #humidity { font-size: 0.68rem; }
+}
+
+/* Small devices (landscape phones & small tablets, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .row {
+        margin: 0.35% !important;
+        padding: 0.35% !important;
+        border-radius: 13px;
+    }
+
+    section {
+        padding: 0.5%;
+    }
+
+    .city { height: 8%; }
+    #city { font-size: 0.78rem; }
+
+    .clock { height: 23%; }
+    #clock { font-size: 0.96rem; max-width: 85%; }
+
+    .date { height: 10%; }
+    #date { font-size: 0.54rem; }
+
+    #sunupdown { height: 9%; }
+    #sun { font-size: 0.92rem; }
+    #sun-time { font-size: 0.63rem; }
+
+    .weather { height: 15%; }
+    #weather { font-size: 0.78rem; }
+
+    .temperature { height: 20%; }
+    #temperature { font-size: 0.71rem; }
+    #temperature-icon { font-size: 0.76rem; }
+    #celsius-icon { font-size: 0.57rem; }
+
+    .humidity-box { height: 15%; }
+    #humidity-icon { font-size: 0.76rem; }
+    #humidity { font-size: 0.71rem; }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .row {
+        margin: 0.4% !important;
+        padding: 0.4% !important;
+        border-radius: 14px;
+    }
+
+    section {
+        padding: 0.5%;
+    }
+
+    .city { height: 8%; }
+    #city { font-size: 0.8rem; }
+
+    .clock { height: 23%; }
+    #clock { font-size: 1rem; max-width: 85%; }
+
+    .date { height: 10%; }
+    #date { font-size: 0.56rem; }
+
+    #sunupdown { height: 9%; }
+    #sun { font-size: 0.95rem; }
+    #sun-time { font-size: 0.65rem; }
+
+    .weather { height: 15%; }
+    #weather { font-size: 0.82rem; }
+
+    .temperature { height: 20%; }
+    #temperature { font-size: 0.74rem; }
+    #temperature-icon { font-size: 0.8rem; }
+    #celsius-icon { font-size: 0.6rem; }
+
+    .humidity-box { height: 15%; }
+    #humidity-icon { font-size: 0.8rem; }
+    #humidity { font-size: 0.74rem; }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .row {
+        margin: 0.4% !important;
+        padding: 0.4% !important;
+        border-radius: 15px;
+    }
+
+    section {
+        padding: 0.5%;
+    }
+
+    .city { height: 8%; }
+    #city { font-size: 0.82rem; }
+
+    .clock { height: 23%; }
+    #clock { font-size: 1.02rem; max-width: 85%; }
+
+    .date { height: 10%; }
+    #date { font-size: 0.58rem; }
+
+    #sunupdown { height: 9%; }
+    #sun { font-size: 0.98rem; }
+    #sun-time { font-size: 0.68rem; }
+
+    .weather { height: 15%; }
+    #weather { font-size: 0.85rem; }
+
+    .temperature { height: 20%; }
+    #temperature { font-size: 0.77rem; }
+    #temperature-icon { font-size: 0.83rem; }
+    #celsius-icon { font-size: 0.62rem; }
+
+    .humidity-box { height: 15%; }
+    #humidity-icon { font-size: 0.83rem; }
+    #humidity { font-size: 0.77rem; }
 }
 
 /* Extra Large devices (desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .row {
-        margin: 0.75% !important;
-        padding: 0.75% !important;
-        border-radius: 20px;
+        margin: 0.4% !important;
+        padding: 0.4% !important;
+        border-radius: 15px;
     }
 
     section {
-        padding: 0.75%;
+        padding: 0.5%;
     }
 
-    .city { height: 12%; }
-    #city { 
-        font-size: 0.85rem;
-        max-width: 90%;
-    }
+    .city { height: 8%; }
+    #city { font-size: 0.75rem; }
 
-    .clock { height: 38%; }
-    #clock { 
-        font-size: 1.4rem;
-        max-width: 85%;
-    }
+    .clock { height: 23%; }
+    #clock { font-size: 0.8rem; max-width: 85%; }
 
-    .date { height: 22%; }
-    #date { 
-        font-size: 0.65rem;
-        max-width: 90%;
-    }
+    .date { height: 10%; }
+    #date { font-size: 0.48rem; }
 
-    #sunupdown { height: 18%; }
-    #sun { font-size: 1.1rem; }
-    #sun-time { 
-        font-size: 0.75rem;
-        max-width: 90%;
-    }
+    #sunupdown { height: 9%; }
+    #sun { font-size: 0.85rem; }
+    #sun-time { font-size: 0.58rem; }
 
-    .weather { height: 18%; }
-    #weather { font-size: 1.8rem; }
+    .weather { height: 15%; }
+    #weather { font-size: 0.7rem; }
 
-    .temperature { height: 55%; }
-    #temperature { 
-        font-size: 0.9rem;
-        max-width: 85%;
-    }
-    #temperature-icon { font-size: 0.95rem; }
-    #celsius-icon { font-size: 0.7rem; }
+    .temperature { height: 20%; }
+    #temperature { font-size: 0.64rem; }
+    #temperature-icon { font-size: 0.7rem; }
+    #celsius-icon { font-size: 0.52rem; }
 
-    .humidity-box { height: 18%; }
-    #humidity-icon { font-size: 0.95rem; }
-    #humidity { 
-        font-size: 0.9rem;
-        max-width: 85%;
-    }
+    .humidity-box { height: 15%; }
+    #humidity-icon { font-size: 0.7rem; }
+    #humidity { font-size: 0.64rem; }
 }
 
 /* Small devices (landscape phones, 576px and up) */
